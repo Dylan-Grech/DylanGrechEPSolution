@@ -11,48 +11,29 @@ namespace DataAccess.Repositories
 {
     public class PollRepository
     {
-        private readonly PollDbContext _context;
+        private PollDbContext _context;
 
         public PollRepository(PollDbContext context)
         {
             _context = context;
         }
 
-        // Retrieve all polls from the database
-        public async Task<List<Poll>> GetAllPollsAsync()
+        public void CreatePoll(Poll poll)
         {
-            return await _context.Polls.ToListAsync();
-        }
-
-        // Retrieve a poll by its ID
-        public async Task<Poll> GetPollByIdAsync(int id)
-        {
-            return await _context.Polls.FirstOrDefaultAsync(p => p.Id == id);
-        }
-
-        // Add a new poll to the database
-        public async Task AddPollAsync(Poll poll)
-        {
-            _context.Polls.Add(poll);
-            await _context.SaveChangesAsync();
-        }
-
-        // Update an existing poll
-        public async Task UpdatePollAsync(Poll poll)
-        {
-            _context.Polls.Update(poll);
-            await _context.SaveChangesAsync();
-        }
-
-        // Delete a poll by ID
-        public async Task DeletePollAsync(int id)
-        {
-            var poll = await _context.Polls.FindAsync(id);
-            if (poll != null)
+            try
             {
-                _context.Polls.Remove(poll);
-                await _context.SaveChangesAsync();
+                _context.Polls.Add(poll);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
             }
         }
+
+
+
+
+
     }
 }

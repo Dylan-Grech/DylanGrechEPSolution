@@ -67,6 +67,7 @@ C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Presentation\obj\Debu
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Presentation\obj\Debug\net6.0\Presentation.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Presentation\obj\Debug\net6.0\Presentation.RazorAssemblyInfo.cache
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Presentation\obj\Debug\net6.0\Presentation.RazorAssemblyInfo.cs
+C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Presentation\obj\Debug\net6.0\Presentation.sourcelink.json
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Presentation\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Presentation\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Presentation\obj\Debug\net6.0\staticwebassets\msbuild.Presentation.Microsoft.AspNetCore.StaticWebAssets.props

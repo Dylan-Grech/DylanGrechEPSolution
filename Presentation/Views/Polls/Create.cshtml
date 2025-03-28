@@ -1,0 +1,41 @@
+﻿@model Domain.Models.Poll
+
+<h2>Create Poll</h2>
+
+
+<form action="/Polls/Create" method="post">
+    <div class="form-group">
+        <label for="Title">Poll Title</label>
+        <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required />
+    </div>
+    <div class="form-group">
+        <label for="Option1Text">Option 1</label>
+        <input type="text" class="form-control" id="Option1Text" name="Option1Text" value="@Model.Option1Text" required />
+    </div>
+    <div class="form-group">
+        <label for="Option2Text">Option 2</label>
+        <input type="text" class="form-control" id="Option2Text" name="Option2Text" value="@Model.Option2Text" required />
+    </div>
+    <div class="form-group">
+        <label for="Option3Text">Option 3</label>
+        <input type="text" class="form-control" id="Option3Text" name="Option3Text" value="@Model.Option3Text" required />
+    </div>
+    <div class="form-group">
+        <label for="Option1VotesCount">Option 1 Count</label>
+        <input type="text" class="form-control" id="Option1VotesCount" name="Option1VotesCount" value="@Model.Option1VotesCount" required />
+    </div>
+    <div class="form-group">
+        <label for="Option2VotesCount">Option 2 Count</label>
+        <input type="text" class="form-control" id="Option2VotesCount" name="Option2VotesCount" value="@Model.Option2VotesCount" required />
+    </div>
+    <div class="form-group">
+        <label for="Option3VotesCount">Option 3 Count</label>
+        <input type="text" class="form-control" id="Option3VotesCount" name="Option3VotesCount" value="@Model.Option3VotesCount" required />
+    </div>
+    <div class="form-group">
+        <label for="DateCreated">Date</label>
+        <input type="datetime" class="form-control" id="DateCreated" name="DateCreated" value="@Model.DateCreated" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create Poll</button>
+</form>

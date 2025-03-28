@@ -9,6 +9,7 @@ C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\DataAccess\obj\Debug\
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\DataAccess\obj\Debug\net6.0\DataAccess.sourcelink.json
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\DataAccess\obj\Debug\net6.0\DataAccess.csproj.Up2Date
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\DataAccess\obj\Debug\net6.0\DataAccess.dll
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll

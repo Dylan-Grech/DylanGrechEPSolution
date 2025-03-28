@@ -7,6 +7,7 @@ C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Domain\obj\Debug\net6
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Domain\obj\Debug\net6.0\Domain.sourcelink.json
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Domain\obj\Debug\net6.0\Domain.dll
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Domain\obj\Debug\net6.0\refint\Domain.dll
 C:\Users\Ronan Grech\source\repos\TCA\DylanGrechEPSolution\Domain\obj\Debug\net6.0\Domain.pdb
