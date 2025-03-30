@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Domain.Models.Poll>
+
+<h1>Polls</h1>
+
+<div class="poll-cards">
+    @foreach (var poll in Model)
+    {
+        <div class="poll-card">
+            <div class="poll-header">
+                <h4>@poll.Title</h4>
+                <small>@poll.DateCreated.ToString("yyyy-MM-dd HH:mm")</small>
+            </div>
+
+            <button class="btn btn-info btn-sm" onclick="toggleDetails(@poll.Id)">Show Details</button>
+
+            <div class="poll-details" id="poll-details-@poll.Id" style="display:none;">
+                <ul>
+                    <li><strong>Option 1:</strong> @poll.Option1Text</li>
+                    <li><strong>Option 2:</strong> @poll.Option2Text</li>
+                    <li><strong>Option 3:</strong> @poll.Option3Text</li>
+                    <li><strong>Vote Count for Option 1:</strong> @poll.Option1VotesCount</li>
+                    <li><strong>Vote Count for Option 2:</strong> @poll.Option2VotesCount</li>
+                    <li><strong>Vote Count for Option 3:</strong> @poll.Option3VotesCount</li>
+                </ul>
+                <a href="@Url.Action("Vote", "Polls", new { id = @poll.Id })" class="btn btn-primary">Vote</a>
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    function toggleDetails(pollId) {
+        var detailsElement = document.getElementById('poll-details-' + pollId);
+        if (detailsElement.style.display === "none") {
+            detailsElement.style.display = "block"; 
+        } else {
+            detailsElement.style.display = "none"; 
+        }
+    }
+</script>
+
+<style>
+    .poll-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .poll-card {
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .poll-header h4 {
+        margin: 0;
+        font-size: 1.25rem;
+    }
+
+    .poll-header small {
+        font-size: 0.875rem;
+        color: #666;
+    }
+
+    .poll-details {
+        margin-top: 15px;
+    }
+
+        .poll-details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .poll-details li {
+            margin-bottom: 10px;
+        }
+</style>

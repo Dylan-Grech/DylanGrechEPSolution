@@ -1,0 +1,44 @@
+﻿@model Domain.Models.Poll
+
+<h2>Edit Poll</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Title">Poll Title</label>
+        <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" readonly />
+    </div>
+    <div class="form-group">
+        <label for="Option1Text">Option 1</label>
+        <input type="text" class="form-control" id="Option1Text" name="Option1Text" value="@Model.Option1Text" readonly />
+    </div>
+    <div class="form-group">
+        <label for="Option2Text">Option 2</label>
+        <input type="text" class="form-control" id="Option2Text" name="Option2Text" value="@Model.Option2Text" readonly />
+    </div>
+    <div class="form-group">
+        <label for="Option3Text">Option 3</label>
+        <input type="text" class="form-control" id="Option3Text" name="Option3Text" value="@Model.Option3Text" readonly />
+    </div>
+    
+    <div class="form-group">
+        <label for="VoteOption">Choose your Vote</label>
+        <select class="form-control" id="VoteOption" name="VoteOption" required>
+            <option value="">--Select Option--</option>
+
+            <option value="1">@Model.Option1Text</option>
+            <option value="2">@Model.Option2Text</option>
+            <option value="3">@Model.Option3Text</option>
+        </select>
+    </div>
+
+    <input type="hidden" id="Option1VotesCount" name="Option1VotesCount" value="@Model.Option1VotesCount" />
+    <input type="hidden" id="Option2VotesCount" name="Option2VotesCount" value="@Model.Option2VotesCount" />
+    <input type="hidden" id="Option3VotesCount" name="Option3VotesCount" value="@Model.Option3VotesCount" />
+
+    <div class="form-group">
+        <label for="DateCreated">Date Created</label>
+        <input type="datetime-local" class="form-control" id="DateCreated" name="DateCreated" value="@Model.DateCreated.ToString("yyyy-MM-ddTHH:mm")" readonly />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Vote</button>
+</form>
