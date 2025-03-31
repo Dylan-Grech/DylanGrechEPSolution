@@ -24,6 +24,13 @@
         <label for="DateCreated">Date</label>
         <input type="datetime" class="form-control" id="DateCreated" name="DateCreated" value="@Model.DateCreated" required />
     </div>
+    <div class="form-group">
+        <label for="StorageOption">Choose Storage Option</label>
+        <select class="form-control" id="StorageOption" name="StorageOption" required>
+            <option value="Database">Database (SQL)</option>
+            <option value="File">JSON File</option>
+        </select>
+    </div>
 
     <button type="submit" class="btn btn-primary">Create Poll</button>
 </form>

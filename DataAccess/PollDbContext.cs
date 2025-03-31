@@ -12,6 +12,6 @@ namespace DataAccess
     {
         public PollDbContext(DbContextOptions<PollDbContext> options) : base(options) { }
 
-        public DbSet<Poll> Polls { get; set; }  // Represents Polls table in the database
+        public DbSet<Poll> Polls { get; set; }  
     }
 }

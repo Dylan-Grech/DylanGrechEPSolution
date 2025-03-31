@@ -5,58 +5,25 @@ using Microsoft.Extensions.Logging;
 
 namespace Presentation.Controllers
 {
-    public class PollsController : Controller
+    public class PollsFileController : Controller
     {
-        private readonly PollRepository _pollRepository;
         private readonly PollFileRepository _pollFileRepository;
-        private readonly ILogger<PollsController> _logger;
 
-        public PollsController(PollRepository pollRepository, PollFileRepository pollFileRepository, ILogger<PollsController> logger)
+        public PollsFileController(PollFileRepository pollFileRepository)
         {
-            _pollRepository = pollRepository;
             _pollFileRepository = pollFileRepository;
-            _logger = logger;
         }
 
         public IActionResult Index()
         {
-            var list = _pollRepository.GetPolls().OrderByDescending(p => p.DateCreated).ToList();
+            var list = _pollFileRepository.GetPolls().OrderByDescending(p => p.DateCreated).ToList(); ;
             return View(list);
-        }
-
-        [HttpGet]
-        public IActionResult Create() {
-            return View(new Poll());
-        }
-
-        [HttpPost]
-        public IActionResult Create(Poll poll, string StorageOption) {
-
-            if (poll.DateCreated == default)
-            {
-                poll.DateCreated = DateTime.Now; 
-            }
-
-            if (ModelState.IsValid)
-            {
-                if (StorageOption == "File")
-                {
-                    _pollFileRepository.CreatePoll(poll);
-                }
-                else
-                {
-                    _pollRepository.CreatePoll(poll);
-                }
-                return RedirectToAction("Index", "Home");
-            }
-
-            return View(poll);
         }
 
         [HttpGet]
         public IActionResult Vote(int id)
         {
-            var poll = _pollRepository.GetPolls().FirstOrDefault(p => p.Id == id);
+            var poll = _pollFileRepository.GetPolls().FirstOrDefault(p => p.Id == id);
 
             if (poll == null)
             {
@@ -106,12 +73,11 @@ namespace Presentation.Controllers
                     default:
                         break;
                 }
-                _pollRepository.UpdatePoll(poll);
-                return RedirectToAction("Index");  
+                _pollFileRepository.UpdatePoll(poll);
+                return RedirectToAction("Index");
             }
 
-            return View(poll);  
+            return View(poll);
         }
-
     }
 }

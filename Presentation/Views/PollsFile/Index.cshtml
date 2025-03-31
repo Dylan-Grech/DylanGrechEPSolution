@@ -23,7 +23,7 @@
                     <li><strong>Votes for Option 3:</strong> @poll.Option3VotesCount</li>
                 </ul>
 
-                <a href="@Url.Action("Vote", "Polls", new { id = @poll.Id })" class="btn btn-primary">Vote</a>
+                <a href="@Url.Action("Vote", "PollsFile", new { id = @poll.Id })" class="btn btn-primary">Vote</a>
 
                 <canvas id="chart-@poll.Id" width="400" height="200"></canvas>
             </div>
