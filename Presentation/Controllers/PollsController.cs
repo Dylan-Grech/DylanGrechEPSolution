@@ -25,16 +25,18 @@ namespace Presentation.Controllers
         }
 
         [HttpGet]
-        public IActionResult Create() {
+        public IActionResult Create()
+        {
             return View(new Poll());
         }
 
         [HttpPost]
-        public IActionResult Create(Poll poll, string StorageOption) {
+        public IActionResult Create(Poll poll, string StorageOption)
+        {
 
             if (poll.DateCreated == default)
             {
-                poll.DateCreated = DateTime.Now; 
+                poll.DateCreated = DateTime.Now;
             }
 
             if (ModelState.IsValid)
@@ -61,6 +63,13 @@ namespace Presentation.Controllers
             if (poll == null)
             {
                 return NotFound();
+            }
+
+            var votedPolls = HttpContext.Session.GetString("VotedPolls");
+            if (votedPolls != null && votedPolls.Split(',').Contains(id.ToString()))
+            {
+                TempData["ErrorMessage"] = "You have already voted on this poll.";
+                return RedirectToAction("Index");
             }
 
             return View(poll);
@@ -106,12 +115,25 @@ namespace Presentation.Controllers
                     default:
                         break;
                 }
+
                 _pollRepository.UpdatePoll(poll);
-                return RedirectToAction("Index");  
+
+                var votedPolls = HttpContext.Session.GetString("VotedPolls");
+                if (string.IsNullOrEmpty(votedPolls))
+                {
+                    votedPolls = poll.Id.ToString();
+                }
+                else
+                {
+                    votedPolls = $"{votedPolls},{poll.Id}";
+                }
+
+                HttpContext.Session.SetString("VotedPolls", votedPolls);
+
+                return RedirectToAction("Index");
             }
 
-            return View(poll);  
+            return View(poll);
         }
-
     }
 }

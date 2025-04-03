@@ -28,7 +28,7 @@
     "Option2Text": "No",
     "Option3Text": "Maybe",
     "Option1VotesCount": 1,
-    "Option2VotesCount": null,
+    "Option2VotesCount": 1,
     "Option3VotesCount": null,
     "DateCreated": "2025-03-31T20:48:00"
   }

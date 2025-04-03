@@ -4,10 +4,22 @@ using Microsoft.EntityFrameworkCore;
 using Presentation.Controllers;
 using Microsoft.Extensions.Logging;
 using System.IO;
+using System;
+using Presentation.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddSession();
+
+builder.Services.AddScoped<RequireLoginFilter>();
+
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.AddService<RequireLoginFilter>();  // Register filter globally
+});
+
+builder.Services.AddDbContext<UserDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddDbContext<PollDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -47,9 +59,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseSession();
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

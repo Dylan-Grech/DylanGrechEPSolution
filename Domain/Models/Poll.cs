@@ -16,7 +16,7 @@ namespace Domain.Models
         public int? Option1VotesCount { get; set; }
         public int? Option2VotesCount { get; set; }
         public int? Option3VotesCount { get; set; }
-        public DateTime DateCreated { get; set; }  // Changed "Question" to "Name"
+        public DateTime DateCreated { get; set; } 
     }
 }
 
